@@ -11,10 +11,12 @@ namespace VerzioKezelesHF
         static void Main(string[] args)
         {
             double atlag = 0;
-            int[] szamok = new int[10];
+            Console.WriteLine("Adja meg mennyi számot szeretne megadni!");
+            int mennyi = int.Parse(Console.ReadLine());
+            int[] szamok = new int[mennyi];
             for (int i = 0; i < szamok.Length; i++)
             {
-                Console.WriteLine("Kérem a(z) " + i + ". számot!");
+                Console.WriteLine("Kérem a(z) " + (i + 1) + ". számot!");
                 szamok[i] = int.Parse(Console.ReadLine());
 
             }
