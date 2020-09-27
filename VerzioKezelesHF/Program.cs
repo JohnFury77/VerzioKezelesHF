@@ -11,6 +11,8 @@ namespace VerzioKezelesHF
         static void Main(string[] args)
         {
             double atlag = 0;
+            int max = 0;
+            int min = 999999999;
             Console.WriteLine("Adja meg mennyi számot szeretne megadni!");
             int mennyi = int.Parse(Console.ReadLine());
             int[] szamok = new int[mennyi];
@@ -24,8 +26,25 @@ namespace VerzioKezelesHF
             {
                 atlag += szamok[i];
             }
+
             atlag = atlag / szamok.Length;
             Console.WriteLine("A " + szamok.Length + " darab számnak " + atlag + " az átlaga.");
+            for (int i = 0; i < szamok.Length; i++)
+            {
+                if (szamok[i] > max) 
+                {
+                    max = szamok[i];
+                }
+            }
+            for (int i = 0; i < szamok.Length; i++)
+            {
+                if (szamok[i] < min)
+                {
+                    min = szamok[i];
+                }
+            }
+            Console.WriteLine("Ezek közül a legnagyobb: " + max + ", a legkissebb: " + min);
+            
             Console.ReadKey();
 
         }
